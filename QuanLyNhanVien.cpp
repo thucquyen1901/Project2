@@ -1,5 +1,5 @@
 #include"QuanLyNhanVien.h"
-
+#include<iomanip>
 int QuanLyNhanVien::ind = 0;
 
 QuanLyNhanVien::QuanLyNhanVien(){
@@ -32,6 +32,14 @@ void QuanLyNhanVien::Add_NV(NhanVien v){
 }
 
 void QuanLyNhanVien::Show(){
+    cout << "ID:";
+    cout << setw(15) << "Name:";
+    cout << setw(5) << "DoB:";
+    cout << setw(20) << "Address:";
+    cout << setw(20) << "Tel:";
+    cout << setw(20) << "CMND:";
+    cout << setw(20) << "Position:";
+    cout << setw(20) << "Duty:" << endl;
     for(int i= 0; i < this->n; i++){
         (p+i)->Display();
     }
@@ -85,7 +93,9 @@ void QuanLyNhanVien::Delete_NV(string m){
         }
         break;
     }
-    this->n--;
     if(!c) cout << "Khong Tim Thay" << endl;
-    else cout << "Xoa Thanh Cong" << endl;
+    else {
+        this->n--;
+        cout << "Xoa Thanh Cong" << endl;
+    }
 }
