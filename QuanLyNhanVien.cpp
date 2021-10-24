@@ -3,10 +3,13 @@
 int QuanLyNhanVien::ind = 0;
 
 QuanLyNhanVien::QuanLyNhanVien(){
+    this->p = NULL;
+    this->n = 0;
     this->ind++;
 }
 
 QuanLyNhanVien::~QuanLyNhanVien(){
+    delete[] this->p;
     this->ind--;
 }
 
