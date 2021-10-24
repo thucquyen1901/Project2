@@ -11,6 +11,7 @@ public:
     ~QuanLyNhanVien();
     void Show();
     void Add_NV(NhanVien);
+    int checkMSNV(string);
     int IndexOf(string);
     void Update_NV(string);
     void Delete_NV(string);

@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+#include<iomanip>
 #pragma once
 using namespace std;
 
@@ -11,18 +11,19 @@ private:
     string theLoai;
     int thoiLuong;
     string daoDien;
-    vector<string> dienVien;
+    string dienVien;
     int namCongChieu;
     string quocGia;
 public:
-    Film();
-    Film(string, string , string , int , string , vector<string> , int , string );
+    Film(string = "", string = "", string = "", int = 0, string = "", string = "", int = 0, string = "");
+
+
     void setMaPhim(string);
     void setTenPhim(string);
     void setTheLoai(string);
     void setThoiLuong(int);
     void setDaoDien(string);
-    void setDienVien(vector<string>);
+    void setDienVien(string);
     void setNamCongChieu(int);
     void setQuocGia(string);
     string getMaPhim();
@@ -30,9 +31,9 @@ public:
     string getTheLoai();
     int getThoiLuong();
     string getDaoDien();
-    vector<string> getDienVien();
+    string getDienVien();
     string getQuocGia();
-    void display();
+    void Display();
     void ShowMenu();
     ~Film();
 };

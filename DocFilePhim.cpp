@@ -12,7 +12,7 @@ void themPhim(int h){
     string theLoai;
     int thoiLuong;
     string daoDien;
-    vector<string> dienVien;
+    string dienVien;
     int namCongChieu;
     string quocGia;
     Phim.open("Phim.csv", ios::app);
