@@ -83,11 +83,8 @@ NhanVien::~NhanVien(){
     
 void NhanVien::Display(){
     cout <<  this->MaNhanVien;
-    cout << setw(20) << this->HoTen;
-    cout << setw(10) << this->NgaySinh;
-    cout << setw(20) << this->QueQuan;
+    cout << setw(25) << this->HoTen;
     cout << setw(25) << this->SoDienThoai;
-    cout << setw(10) << this->SoCMT;
-    cout << setw(10) << this->ChucVu;
-    cout << setw(10) << this->PhanQuyen << endl;
+    cout << setw(25) << this->SoCMT;
+    cout << setw(25) << this->ChucVu << endl;
 }
