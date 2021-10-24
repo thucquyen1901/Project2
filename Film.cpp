@@ -93,4 +93,15 @@ void Film::display()
     cout << "Quoc Gia: " << quocGia << endl;
 }
 
+void Film::ShowMenu()
+{
+    cout<<"\n1.Xem Hom nay co phim gi:";
+    cout<<"\n2.Tim kiem Phim theo the loai:";
+    cout<<"\n3.Tim kiem Phim";
+    cout<<"\n4.Chon Xem Phim";
+    cout<<"\n5.Thanh Toan";
+    cout<<"\n6.Doi mat khau";
+    cout<<"\n7.Thoat";
+    cout<<"\nchon:";
+}
 Film::~Film(){};

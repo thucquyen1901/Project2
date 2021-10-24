@@ -33,5 +33,6 @@ public:
     vector<string> getDienVien();
     string getQuocGia();
     void display();
+    void ShowMenu();
     ~Film();
 };
