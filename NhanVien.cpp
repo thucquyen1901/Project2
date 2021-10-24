@@ -1,5 +1,5 @@
 #include "NhanVien.h"
-
+#include<iomanip>
 NhanVien::NhanVien(){}
 
 NhanVien::NhanVien(string MaNhanVien, string HoTen, string NgaySinh, string QueQuan, string SoDienThoai, string SoCMT, string ChucVu, string PhanQuyen){
@@ -11,6 +11,10 @@ NhanVien::NhanVien(string MaNhanVien, string HoTen, string NgaySinh, string QueQ
     this->SoCMT = SoCMT;
     this->ChucVu = ChucVu;
     this->PhanQuyen = PhanQuyen;
+}
+
+NhanVien::~NhanVien(){
+
 }
 
     string NhanVien::getMaNV(){
@@ -78,12 +82,9 @@ NhanVien::NhanVien(string MaNhanVien, string HoTen, string NgaySinh, string QueQ
     }
     
 void NhanVien::Display(){
-    cout << "Mã Nhân Viên: " << this->MaNhanVien << endl;
-    cout << "Họ Tên: " << this->HoTen << endl;
-    cout << "Ngày Sinh: " << this->NgaySinh << endl;
-    cout << "Quê Quán: " << this->QueQuan << endl;
-    cout << "STD: " << this->SoDienThoai << endl;
-    cout << "CMND: " << this->SoCMT << endl;
-    cout << "Chức Vụ: " << this->ChucVu  << endl;
-    cout << "Phân Quyền: " << this->PhanQuyen << endl;
+    cout <<  this->MaNhanVien;
+    cout << setw(25) << this->HoTen;
+    cout << setw(25) << this->SoDienThoai;
+    cout << setw(25) << this->SoCMT;
+    cout << setw(25) << this->ChucVu << endl;
 }
