@@ -85,4 +85,16 @@ void Film::Display()
     cout << setw(25) << daoDien;
     cout << setw(25) << dienVien << endl;
 }
+
+void Film::Display2(){
+    cout << "Ma Phim: " << this->maPhim << endl;
+    cout << "Ten Phim: " << this->tenPhim << endl;
+    cout << "The Loai: " << this->theLoai << endl;
+    cout << "Thoi Luong: " <<this->thoiLuong << endl;
+    cout << "Dao Dien: " << this->daoDien << endl;
+    cout << "Dien Vien: " << this->dienVien << endl;
+    cout << "Nam Cong Chieu: " << this->namCongChieu << endl;
+    cout << "Quoc Gia: " << this->quocGia << endl;
+}
+
 Film::~Film(){}

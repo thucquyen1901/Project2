@@ -75,64 +75,49 @@ int QuanLyPhim::checkMSFilm(string s)
 
 void QuanLyPhim::Update_Film(string m)
 {
-    bool c = false;
-    for (int i = 0; i < this->n; i++)
-    {
+    int i = checkMSFilm("m");
+    if(i >= 0){
         if (m == (this->p + i)->getMaPhim())
         {
-            string g;
+            string a,b,c,d,e,f;
+            int g, h;
             system("cls");
-            (this->p + i)->Display();
-            cout << "Nhap Ten Moi:";
+            (this->p + i)->Display2();
+            cout << "Nhap Ma Phim Moi: ";
             fflush(stdin);
-            getline(cin, g);
-            (this->p + i)->setTenPhim(g);
-            c = true;
+            getline(cin, a);
+            cout << "\nNhap Ten Phim Moi: ";
+            fflush(stdin);
+            getline(cin, b);
+            cout << "\nNhap The Loai: ";
+            fflush(stdin);
+            getline(cin, c);
+            cout << "\nNhap Thoi Luong: ";
+            cin >> g;
+            cout << "\nNhap Dao Dien: ";
+            fflush(stdin);
+            getline(cin, d);
+            cout << "\nNhap Dien Vien: ";
+            fflush(stdin);
+            getline(cin, e);
+            cout << "\nNhap Nam Cong Chieu: ";
+            cin >> h;
+            cout << "Nhap Quoc Gia: ";
+            fflush(stdin);
+            getline(cin, f);
+            (this->p + i)->setMaPhim(a);
+            (this->p + i)->setTenPhim(b);
+            (this->p + i)->setTheLoai(c);
+            (this->p + i)->setDaoDien(d);
+            (this->p + i)->setDienVien(e);
+            (this->p + i)->setQuocGia(f);
+            (this->p + i)->setThoiLuong(g);
+            (this->p + i)->setNamCongChieu(h);
         }
     }
-    if (!c)
-    {
-        cout << "Khong tim thay";
-        system("pause");
-    }
+    else cout << "Khong Tim Thay Ma Phim Can Sua!";
     cout << endl;
 }
-
-// void QuanLyPhim::Delete_Film(string m){
-//     bool c = false;
-//     for(int i = 0; i < this->n; i++){
-//         if(m == (this->p +i)->getMaPhim()){
-//             if(this->n == 1){
-//                 delete[] this->p;
-//                 this->p = nullptr;
-//             }
-//             else {
-//                 Film *temp = new Film[this->n];
-//                 for(int k = 0; k < this->n ; k++){
-//                     *(temp+k) = *(this->p + k);
-//                 }
-//                 delete[] this->p;
-//                 this->p = new Film[this->n-1];
-//                 for (int j = 0; j < this->n-1; j++)
-//                 {
-//                     if(j < i){
-//                         *(this->p + j) = *(temp + j);
-//                     }
-//                     else{
-//                         *(this->p + j) = *(temp + j + 1);
-//                     }
-//                 }
-//                 delete[] temp;
-//             }
-//             c = true;
-//         }
-//     }
-//     if(!c) cout << "Khong Tim Thay" << endl;
-//     else {
-//         this->n--;
-//         cout << "Xoa Thanh Cong" << endl;
-//     }
-// }
 
 void QuanLyPhim::Delete_Film(string m)
 {

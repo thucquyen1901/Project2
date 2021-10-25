@@ -2,15 +2,26 @@
 #include <math.h>
 #include "QuanLyPhim.h"
 #include"QuanLyNhanVien.h"
+#include "DoHoa.h"
+#include <windows.h>
 using namespace std;
-
-
-
 int main(){
-    Film f2("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
-    QuanLyPhim p;
-    p.Add_Film(f2);
-    p.Show();
-    system("pause");
+    // SetConsoleOutputCP(65001);
+    system("cls");
+    SetColor(0,4);
+    GoTo(5,5);
+    cout << "Hello";
+
+    // Film f1("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
+    // Film f2("2", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
+    // Film f3("3", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
+    // QuanLyPhim p;
+    // p.Add_Film(f1);
+    // p.Add_Film(f2);
+    // p.Add_Film(f3);
+    // p.Show();
+    // p.Update_Film("6");
+    // p.Delete_Film("1");
+    // p.Show();
     return 0;
 }

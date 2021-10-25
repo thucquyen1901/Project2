@@ -15,7 +15,7 @@ private:
     int namCongChieu;
     string quocGia;
 public:
-    Film(string = "", string = "", string = "", int = 0, string = "", string = "", int = 0, string = "");
+    Film(string = "Unknown", string = "Unknown", string = "Unknown", int = 0, string = "Unknown", string = "Unknown", int = 0, string = "Unknown");
 
 
     void setMaPhim(string);
@@ -34,6 +34,7 @@ public:
     string getDienVien();
     string getQuocGia();
     void Display();
+    void Display2();
     void ShowMenu();
     ~Film();
 };
