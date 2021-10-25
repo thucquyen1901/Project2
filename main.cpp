@@ -6,11 +6,10 @@
 #include <windows.h>
 using namespace std;
 int main(){
-    // SetConsoleOutputCP(65001);
+    SetConsoleOutputCP(65001);
     system("cls");
-    SetColor(0,4);
     GoTo(5,5);
-    cout << "Hello";
+    cout << "Xin Chào Bạn";
 
     // Film f1("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
     // Film f2("2", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
