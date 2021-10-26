@@ -39,11 +39,11 @@ void QuanLyPhim::Add_Film(const Film &f)
 void QuanLyPhim::Show()
 {
     cout << "Ma Phim";
-    cout << setw(25) << "Ten Phim:     ";
-    cout << setw(25) << "The loai:      ";
-    cout << setw(25) << "Thoi Luong:     ";
-    cout << setw(25) << "Dao Dien:     ";
-    cout << setw(25) << "Dien Vien:     " << endl;
+    cout << setw(25) << left << "Ten Phim:     ";
+    cout << setw(25) << left << "The loai:      ";
+    cout << setw(25) << left << "Thoi Luong:     ";
+    cout << setw(25) << left << "Dao Dien:     ";
+    cout << setw(25) << left << "Dien Vien:     " << endl;
     for (int i = 0; i < this->n; i++)
     {
         (p + i)->Display();

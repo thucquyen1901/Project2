@@ -79,11 +79,11 @@ string Film::getQuocGia()
 void Film::Display()
 {
     cout << maPhim;
-    cout << setw(25) << tenPhim;
-    cout << setw(25) << theLoai;
-    cout << setw(25) << thoiLuong;
-    cout << setw(25) << daoDien;
-    cout << setw(25) << dienVien << endl;
+    cout << setw(25) << left << tenPhim;
+    cout << setw(25) << left << theLoai;
+    cout << setw(25) << left << thoiLuong;
+    cout << setw(25) << left << daoDien;
+    cout << setw(25) << left << dienVien << endl;
 }
 
 void Film::Display2(){

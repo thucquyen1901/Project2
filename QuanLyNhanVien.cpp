@@ -36,10 +36,10 @@ void QuanLyNhanVien::Add_NV(NhanVien v){
 
 void QuanLyNhanVien::Show(){
     cout << "ID:";
-    cout << setw(25) << "Name:     ";
-    cout << setw(25) << "Tel:      ";
-    cout << setw(25) << "CMND:     ";
-    cout << setw(25) << "Position:      " << endl;
+    cout << setw(25) << left << "Name:     ";
+    cout << setw(25) << left << "Tel:      ";
+    cout << setw(25) << left << "CMND:     ";
+    cout << setw(25) << left << "Position:      " << endl;
     for(int i= 0; i < this->n; i++){
         (p+i)->Display();
     }
