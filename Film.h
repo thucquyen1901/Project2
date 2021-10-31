@@ -9,27 +9,27 @@ private:
     string maPhim;
     string tenPhim;
     string theLoai;
-    int thoiLuong;
+    string thoiLuong;
     string daoDien;
     string dienVien;
-    int namCongChieu;
+    string namCongChieu;
     string quocGia;
 public:
-    Film(string = "Unknown", string = "Unknown", string = "Unknown", int = 0, string = "Unknown", string = "Unknown", int = 0, string = "Unknown");
+    Film(string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown");
 
 
     void setMaPhim(string);
     void setTenPhim(string);
     void setTheLoai(string);
-    void setThoiLuong(int);
+    void setThoiLuong(string);
     void setDaoDien(string);
     void setDienVien(string);
-    void setNamCongChieu(int);
+    void setNamCongChieu(string);
     void setQuocGia(string);
     string getMaPhim();
     string getTenPhim();
     string getTheLoai();
-    int getThoiLuong();
+    string getThoiLuong();
     string getDaoDien();
     string getDienVien();
     string getQuocGia();

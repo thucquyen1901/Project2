@@ -1,7 +1,5 @@
 #include "NhanVien.h"
 #include<iomanip>
-NhanVien::NhanVien(){}
-
 NhanVien::NhanVien(string MaNhanVien, string HoTen, string NgaySinh, string QueQuan, string SoDienThoai, string SoCMT, string ChucVu, string PhanQuyen){
     this->MaNhanVien =  MaNhanVien;
     this->HoTen = HoTen;
@@ -82,9 +80,9 @@ NhanVien::~NhanVien(){
     }
     
 void NhanVien::Display(){
-    cout <<  this->MaNhanVien;
-    cout << setw(25) << this->HoTen;
-    cout << setw(25) << this->SoDienThoai;
-    cout << setw(25) << this->SoCMT;
-    cout << setw(25) << this->ChucVu << endl;
+    cout << setw(25) << left << this->MaNhanVien;
+    cout << setw(25) << left << this->HoTen;
+    cout << setw(25) << left << this->SoDienThoai;
+    cout << setw(25) << left << this->SoCMT;
+    cout << setw(25) << left << this->ChucVu << endl;
 }

@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 using namespace std;
 class PhongChieu
 {
@@ -11,8 +12,11 @@ private:
     string TinhTrang;
     string MaBaoVe;
 public:
-    PhongChieu();
-    PhongChieu(string, int ,string, string, float, string, string);
+
+    PhongChieu(string = "Unkown", int = 0 ,string = "Unkown", string = "Unkown", float = 0, string = "Unkown", string = "Unkown");
+    PhongChieu(const PhongChieu&);
+    void Display();
+    void Display2();
     ~PhongChieu();
     void Display();
 };

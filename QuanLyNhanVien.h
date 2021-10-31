@@ -1,5 +1,5 @@
 #include"NhanVien.h"
-
+#pragma once
 class QuanLyNhanVien
 {
 private:

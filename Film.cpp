@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Film::Film(string maPhim, string tenPhim, string theLoai, int thoiLuong, string daoDien, string dienVien, int namCongChieu, string quocGia)
+Film::Film(string maPhim, string tenPhim, string theLoai, string thoiLuong, string daoDien, string dienVien, string namCongChieu, string quocGia)
 {
     this->maPhim = maPhim;
     this->tenPhim = tenPhim;
@@ -27,7 +27,7 @@ void Film::setTheLoai(string theLoai)
 {
     this->theLoai = theLoai;
 }
-void Film::setThoiLuong(int thoiLuong)
+void Film::setThoiLuong(string thoiLuong)
 {
     this->thoiLuong = thoiLuong;
 }
@@ -39,7 +39,7 @@ void Film::setDienVien(string dienVien)
 {
     this->dienVien = dienVien;
 }
-void Film::setNamCongChieu(int namCongChieu)
+void Film::setNamCongChieu(string namCongChieu)
 {
     this->namCongChieu = namCongChieu;
 }
@@ -60,7 +60,7 @@ string Film::getTheLoai()
 {
     return theLoai;
 }
-int Film::getThoiLuong()
+string Film::getThoiLuong()
 {
     return thoiLuong;
 }
@@ -78,12 +78,12 @@ string Film::getQuocGia()
 }
 void Film::Display()
 {
-    cout << maPhim;
-    cout << setw(25) << left << tenPhim;
-    cout << setw(25) << left << theLoai;
-    cout << setw(25) << left << thoiLuong;
-    cout << setw(25) << left << daoDien;
-    cout << setw(25) << left << dienVien << endl;
+    cout << "|    " << setw(11) << left << this->maPhim << "|";
+    cout << setw(30) << left << this->tenPhim << "|";
+    cout << setw(25) << left << this->theLoai << "|";
+    cout << setw(25) << left << this->thoiLuong << "|";
+    cout << setw(25) << left << this->daoDien << "|";
+    cout << setw(25) << left << this->dienVien<< endl;
 }
 
 void Film::Display2(){

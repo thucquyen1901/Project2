@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#pragma once
 using namespace std;
 
 class NhanVien
@@ -14,8 +15,7 @@ private:
     string ChucVu;
     string PhanQuyen;
 public:
-    NhanVien(string, string, string, string, string, string, string, string);
-    NhanVien();
+    NhanVien(string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown");
     ~NhanVien();
     string getMaNV();
     string getHoTen();

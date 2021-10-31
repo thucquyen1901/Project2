@@ -1,5 +1,6 @@
 #include "Film.h"
 #include<string>
+#pragma once
 class QuanLyPhim
 {
 private:

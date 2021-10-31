@@ -38,12 +38,12 @@ void QuanLyPhim::Add_Film(const Film &f)
 
 void QuanLyPhim::Show()
 {
-    cout << "Ma Phim";
-    cout << setw(25) << left << "Ten Phim:     ";
-    cout << setw(25) << left << "The loai:      ";
-    cout << setw(25) << left << "Thoi Luong:     ";
-    cout << setw(25) << left << "Dao Dien:     ";
-    cout << setw(25) << left << "Dien Vien:     " << endl;
+    cout << "|" << setw(15) << left << " Ma Phim" << "|";
+    cout << setw(30) << left << " Ten Phim:" << "|";
+    cout << setw(25) << left << " The loai:" << "|";
+    cout << setw(25) << left << " Thoi Luong:" << "|";
+    cout << setw(25) << left << " Dao Dien:" << "|";
+    cout << setw(25) << left << " Dien Vien:" << endl;
     for (int i = 0; i < this->n; i++)
     {
         (p + i)->Display();
@@ -80,7 +80,7 @@ void QuanLyPhim::Update_Film(string m)
         if (m == (this->p + i)->getMaPhim())
         {
             string a,b,c,d,e,f;
-            int g, h;
+            string g, h;
             system("cls");
             (this->p + i)->Display2();
             cout << "Nhap Ma Phim Moi: ";
@@ -92,16 +92,18 @@ void QuanLyPhim::Update_Film(string m)
             cout << "\nNhap The Loai: ";
             fflush(stdin);
             getline(cin, c);
-            cout << "\nNhap Thoi Luong: ";
-            cin >> g;
+            cout << "\nNhap Thời Lượng: ";
+            fflush(stdin);
+            getline(cin, c);
             cout << "\nNhap Dao Dien: ";
             fflush(stdin);
             getline(cin, d);
             cout << "\nNhap Dien Vien: ";
             fflush(stdin);
             getline(cin, e);
-            cout << "\nNhap Nam Cong Chieu: ";
-            cin >> h;
+            cout << "\nNhap Năm Công Chiếu: ";
+            fflush(stdin);
+            getline(cin, h);
             cout << "Nhap Quoc Gia: ";
             fflush(stdin);
             getline(cin, f);
