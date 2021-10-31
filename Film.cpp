@@ -98,10 +98,37 @@ void Film::ShowMenu()
     cout<<"\n1.Xem Hom nay co phim gi:";
     cout<<"\n2.Tim kiem Phim theo the loai:";
     cout<<"\n3.Tim kiem Phim";
-    cout<<"\n4.Chon Xem Phim";
-    cout<<"\n5.Thanh Toan";
-    cout<<"\n6.Doi mat khau";
-    cout<<"\n7.Thoat";
+    cout<<"\n4.Thanh Toan";
+    cout<<"\n5.Thoat";
     cout<<"\nchon:";
+}
+void Film::Phim()
+{
+   //đọc file và in ra 
+}
+void Film::InsertFilm()
+{
+    //in ra cac the loai phim
+    /*in ra 3 sự lựa chọn:1.xem thông tin phim
+                         2.chon mua ve
+                         3.quay lại menu chinh*/
+}
+void Film::TimkiemPhim()
+{ //in các thể loại của phim ra:
+  //khach hang chọn the loai
+  //in ra du lieu phim cua the loai do
+  /*in ra 3 sự lựa chọn:1.xem thông tin phim
+                         2.chon mua ve
+                         3.quay lại menu chinh*/ 
+}
+void Film::TimkiemPhim()
+{
+    //khách hàng nhập tên phim muốn tìm kiếm
+    //Nếu có trong file Film.cvs thì in ra
+    /*in ra 3 sự lựa chọn:1.xem thông tin phim
+                         2.chon mua ve
+                         3.quay lại menu chinh*/
+    //nếu không in ra:"Hom nay không chiếu"
+    
 }
 Film::~Film(){};

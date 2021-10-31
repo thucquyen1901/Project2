@@ -5,8 +5,8 @@
 #include"QuanLyNhanVien.h"
 using namespace std;
 
-
-int main(){
+void ShowMenuKhachHang()
+{
     Film F;
     int choose;
     do
@@ -17,7 +17,7 @@ int main(){
      {
      case 1:
          break;
-     case 2:
+     case 2:     
          break;
      case 3:
          break;    
@@ -25,14 +25,15 @@ int main(){
          break;
      case 5:
          break;
-     case 6:
-         break;     
-     case 7:
-         break;
      default:
          break;
      }
-    } while (choose!=7);
+    } while (choose!=5);
+}
+int main(){
+    //Đưa ra bảng Đăng Nhập Đăng Kí và lựa chọn khách hay nhân viên quản lí
+    //code
+    
     NhanVien n1( "Nv1", "Quang Hoang", "3-5-2002", "Hue", "0918636253", "192033798", "NhanVienBanVe", "Ban ve");
     NhanVien n2( "Nv2", "Quang Hoang", "3-5-2002", "Hue", "0918636253", "192033798", "NhanVienBanVe", "Ban ve");
     NhanVien n3( "Nv3", "Hoang Quang", "3-5-2002", "Hue", "0918636253", "192033798", "NhanVienBanVe", "Ban ve");

@@ -34,5 +34,9 @@ public:
     string getQuocGia();
     void display();
     void ShowMenu();
+    void Film::Phim();
+    void Film::InsertFilm();
+    void Film::TimkiemPhim();
+    void Film::ThanhToan();
     ~Film();
 };
