@@ -1,6 +1,5 @@
 #include "QLPhongChieu.h"
-
-
+#include<string>
 QLPhongChieu::QLPhongChieu(/* args */)
 {
     this->p = NULL;
@@ -11,6 +10,7 @@ QLPhongChieu::~QLPhongChieu()
 {
     delete[] this->p;
 }
+
 
 
 void QLPhongChieu::Add_PC(PhongChieu v){
@@ -35,20 +35,25 @@ void QLPhongChieu::Add_PC(PhongChieu v){
 }
 
 void QLPhongChieu::Show(){
-    cout << "ID:";
-    cout << setw(25) << left << "Name:     ";
-    cout << setw(25) << left << "Tel:      ";
-    cout << setw(25) << left << "CMND:     ";
-    cout << setw(25) << left << "Position:      " << endl;
+    cout << setw(25) << left << "Mã Phòng Chiếu:" << "|";
+    cout << setw(20) << left << " Số Chỗ:" << "|";
+    cout << setw(20) << left << " Máy Chiếu:" << "|";
+    cout << setw(20) << left << " Âm Thanh:" << "|";
+    cout << setw(20) << left << " Diện Tích:" << "|";
+    cout << setw(20) << left << " Tình trạng:" << "|";
+    cout << setw(20) << left << " Mã Bảo Vệ:" << endl;
     for(int i= 0; i < this->n; i++){
         (p+i)->Display();
     }
 }
 
-int QLPhongChieu::checkMSPC(string s){
+int QLPhongChieu::checkMSPC(string s)
+{
     int index = -1;
-    for(int i = 0; i < this->n; i++){
-        if(s == (this->p + i)->getMaNV()){
+    for (int i = 0; i < this->n; i++)
+    {
+        if (s == (this->p + i)->getMaPhongChieu())
+        {
             index = i;
             break;
         }
@@ -56,92 +61,76 @@ int QLPhongChieu::checkMSPC(string s){
     return index;
 }
 
-// int QLPhongChieu::IndexOf(string k){
-//     int index = -1;
-//     for(int i = 0; i < this->n; i++){
-//         if((this->p+i)->getMaNV() == k){
-//             index = 
-//         }
-//     }
-// }
-
-void QLPhongChieu::Update_NV(string m){
-    bool c = false;
-    for(int i = 0; i < this->n; i++){
-        if(m == (this->p +i)->getMaNV()){
-            string g;
+void QLPhongChieu::Update_PC(string m)
+{
+    int i = checkMSPC("m");
+    if(i >= 0){
+        if (m == (this->p + i)->getMaPhongChieu())
+        {
+            string a,c,d,f,g;
+            int b;
+            float e;
             system("cls");
             (this->p + i)->Display();
-            cout << "Nhap Ten Moi:";
+            cout << "Nhập Mã Phòng Chiếu: ";
             fflush(stdin);
-            getline(cin,g);
-            (this->p + i)->setHoTen(g);
-            c = true;
+            getline(cin, a);
+            cout << "Nhập Số Chỗ: ";
+            cin >> b;
+            cout << "Nhập Máy Chiếu: ";
+            fflush(stdin);
+            getline(cin, c);
+            cout << "Nhập Âm Thanh: ";
+            fflush(stdin);
+            getline(cin, c);
+            cout << "Nhập Diện Tích: ";
+            cin >> e;
+            cout << "Nhập Tình Trạng: ";
+            fflush(stdin);
+            getline(cin, f);
+            cout << "Nhập Mã Bảo Vệ: ";
+            fflush(stdin);
+            getline(cin, g);
+            (this->p + i)->setMaPhongChieu(a);
+            (this->p + i)->setSoCho(b);
+            (this->p + i)->setMayChieu(c);
+            (this->p + i)->setAmThanh(d);
+            (this->p + i)->setDienTich(e);
+            (this->p + i)->setTinhTrang(f);
+            (this->p + i)->setMaBaoVe(g);
         }
     }
-    if(!c) {
-        cout << "Khong tim thay";
-        system("pause");
-        }
+    else cout << "Khong Tim Thay Ma Phim Can Sua!";
     cout << endl;
 }
 
-// void QLPhongChieu::Delete_NV(string m){
-//     bool c = false;
-//     for(int i = 0; i < this->n; i++){
-//         if(m == (this->p +i)->getMaNV()){
-//             if(this->n == 1){
-//                 delete[] this->p;
-//                 this->p = nullptr;
-//             }
-//             else {
-//                 PhongChieu *temp = new PhongChieu[this->n];
-//                 for(int k = 0; k < this->n ; k++){
-//                     *(temp+k) = *(this->p + k);
-//                 }
-//                 delete[] this->p;
-//                 this->p = new PhongChieu[this->n-1];
-//                 for (int j = 0; j < this->n-1; j++)
-//                 {
-//                     if(j < i){
-//                         *(this->p + j) = *(temp + j);
-//                     }
-//                     else{
-//                         *(this->p + j) = *(temp + j + 1);
-//                     }
-//                 }
-//                 delete[] temp;
-//             }
-//             c = true;
-//         }
-//     }
-//     if(!c) cout << "Khong Tim Thay" << endl;
-//     else {
-//         this->n--;
-//         cout << "Xoa Thanh Cong" << endl;
-//     }
-// }
-
-void QLPhongChieu::Delete_NV(string m){
-    int f = checkMSNV(m);
-    if(f >=0 ){
-        if(this->n == 1){
+void QLPhongChieu::Delete_PC(string m)
+{
+    int f = checkMSPC(m);
+    if (f >= 0)
+    {
+        if (this->n == 1)
+        {
             delete[] this->p;
             this->p = nullptr;
         }
-        else {
+        else
+        {
             PhongChieu *temp = new PhongChieu[this->n];
-            for(int k = 0; k < this->n ; k++){
-                *(temp+k) = *(this->p + k);
+            for (int k = 0; k < this->n; k++)
+            {
+                *(temp + k) = *(this->p + k);
             }
             delete[] this->p;
-            this->p = new PhongChieu[this->n-1];
-            for (int j = 0; j < this->n-1; j++)
+            this->p = new PhongChieu[this->n - 1];
+            for (int j = 0; j < this->n - 1; j++)
             {
-                if(j < f){
+                if (j < f)
+                {
                     *(this->p + j) = *(temp + j);
                 }
-                else{
+                else
+                {
                     *(this->p + j) = *(temp + j + 1);
                 }
             }

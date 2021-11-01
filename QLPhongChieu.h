@@ -1,5 +1,6 @@
 #include "PhongChieu.h"
 #include<iostream>
+#pragma once
 using namespace std;
 class QLPhongChieu
 {
@@ -12,6 +13,6 @@ public:
     void Add_PC(PhongChieu);
     void Show();
     int checkMSPC(string s);
-    void Update_NV(string m);
-    void Delete_NV(string m);
+    void Update_PC(string m);
+    void Delete_PC(string m);
 };
