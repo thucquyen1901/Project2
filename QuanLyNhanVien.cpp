@@ -36,13 +36,24 @@ void QuanLyNhanVien::Add_NV(NhanVien v){
 
 void QuanLyNhanVien::Show(){
     cout << "ID:";
-    cout << setw(25) << "Name:     ";
-    cout << setw(25) << "Tel:      ";
-    cout << setw(25) << "CMND:     ";
-    cout << setw(25) << "Position:      " << endl;
+    cout << setw(25) << left << "Name:     ";
+    cout << setw(25) << left << "Tel:      ";
+    cout << setw(25) << left << "CMND:     ";
+    cout << setw(25) << left << "Position:      " << endl;
     for(int i= 0; i < this->n; i++){
         (p+i)->Display();
     }
+}
+
+int QuanLyNhanVien::checkMSNV(string s){
+    int index = -1;
+    for(int i = 0; i < this->n; i++){
+        if(s == (this->p + i)->getMaNV()){
+            index = i;
+            break;
+        }
+    }
+    return index;
 }
 
 // int QuanLyNhanVien::IndexOf(string k){
@@ -75,38 +86,67 @@ void QuanLyNhanVien::Update_NV(string m){
     cout << endl;
 }
 
+// void QuanLyNhanVien::Delete_NV(string m){
+//     bool c = false;
+//     for(int i = 0; i < this->n; i++){
+//         if(m == (this->p +i)->getMaNV()){
+//             if(this->n == 1){
+//                 delete[] this->p;
+//                 this->p = nullptr;
+//             }
+//             else {
+//                 NhanVien *temp = new NhanVien[this->n];
+//                 for(int k = 0; k < this->n ; k++){
+//                     *(temp+k) = *(this->p + k);
+//                 }
+//                 delete[] this->p;
+//                 this->p = new NhanVien[this->n-1];
+//                 for (int j = 0; j < this->n-1; j++)
+//                 {
+//                     if(j < i){
+//                         *(this->p + j) = *(temp + j);
+//                     }
+//                     else{
+//                         *(this->p + j) = *(temp + j + 1);
+//                     }
+//                 }
+//                 delete[] temp;
+//             }
+//             c = true;
+//         }
+//     }
+//     if(!c) cout << "Khong Tim Thay" << endl;
+//     else {
+//         this->n--;
+//         cout << "Xoa Thanh Cong" << endl;
+//     }
+// }
+
 void QuanLyNhanVien::Delete_NV(string m){
-    bool c = false;
-    for(int i = 0; i < this->n; i++){
-        if(m == (this->p +i)->getMaNV()){
-            if(this->n == 1){
-                delete[] this->p;
-                this->p = nullptr;
+    int f = checkMSNV(m);
+    if(f >=0 ){
+        if(this->n == 1){
+            delete[] this->p;
+            this->p = nullptr;
+        }
+        else {
+            NhanVien *temp = new NhanVien[this->n];
+            for(int k = 0; k < this->n ; k++){
+                *(temp+k) = *(this->p + k);
             }
-            else {
-                NhanVien *temp = new NhanVien[this->n];
-                for(int k = 0; k < this->n ; k++){
-                    *(temp+k) = *(this->p + k);
+            delete[] this->p;
+            this->p = new NhanVien[this->n-1];
+            for (int j = 0; j < this->n-1; j++)
+            {
+                if(j < f){
+                    *(this->p + j) = *(temp + j);
                 }
-                delete[] this->p;
-                this->p = new NhanVien[this->n-1];
-                for (int j = 0; j < this->n-1; j++)
-                {
-                    if(j < i){
-                        *(this->p + j) = *(temp + j);
-                    }
-                    else{
-                        *(this->p + j) = *(temp + j + 1);
-                    }
+                else{
+                    *(this->p + j) = *(temp + j + 1);
                 }
-                delete[] temp;
             }
-            c = true;
+            delete[] temp;
         }
     }
-    if(!c) cout << "Khong Tim Thay" << endl;
-    else {
-        this->n--;
-        cout << "Xoa Thanh Cong" << endl;
-    }
+    this->n--;
 }

@@ -1,11 +1,11 @@
 #include <iostream>
 #include "Film.h"
-#include <vector>
 using namespace std;
 
-Film::Film(){};
-Film::Film(string maPhim, string tenPhim, string theLoai, int thoiLuong, string daoDien, vector<string> dienvien, int namCongChieu, string quocGia)
+
+Film::Film(string maPhim, string tenPhim, string theLoai, int thoiLuong, string daoDien, string dienVien, int namCongChieu, string quocGia)
 {
+    this->maPhim = maPhim;
     this->tenPhim = tenPhim;
     this->theLoai = theLoai;
     this->thoiLuong = thoiLuong;
@@ -13,7 +13,6 @@ Film::Film(string maPhim, string tenPhim, string theLoai, int thoiLuong, string 
     this->dienVien = dienVien;
     this->namCongChieu = namCongChieu;
     this->quocGia = quocGia;
-    this->maPhim = maPhim;
 }
 
 void Film::setMaPhim(string maPhim)
@@ -36,7 +35,7 @@ void Film::setDaoDien(string daoDien)
 {
     this->daoDien = daoDien;
 }
-void Film::setDienVien(vector<string> dienVien)
+void Film::setDienVien(string dienVien)
 {
     this->dienVien = dienVien;
 }
@@ -48,6 +47,7 @@ void Film::setQuocGia(string quocGia)
 {
     this->quocGia = quocGia;
 }
+
 string Film::getMaPhim()
 {
     return maPhim;
@@ -68,7 +68,7 @@ string Film::getDaoDien()
 {
     return daoDien;
 }
-vector<string> Film::getDienVien()
+string Film::getDienVien()
 {
     return dienVien;
 }
@@ -76,42 +76,37 @@ string Film::getQuocGia()
 {
     return quocGia;
 }
-void Film::display()
+void Film::Display()
 {
-    cout << "Ma Phim: " << maPhim << endl;
-    cout << "Ten Phim: " << tenPhim << endl;
-    cout << "The Loai: " << theLoai << endl;
-    cout << "Thoi Luong: " << thoiLuong << endl;
-    cout << "Dao Dien: " << daoDien << endl;
-    cout << "Dien Vien: ";
-    for (int i = 0; i < dienVien.size(); i++)
-    {
-        cout << dienVien[i] << ", ";
-    }
-    cout << endl;
-    cout << "Nam Cong Chieu: " << namCongChieu << endl;
-    cout << "Quoc Gia: " << quocGia << endl;
+    cout << maPhim;
+    cout << setw(25) << left << tenPhim;
+    cout << setw(25) << left << theLoai;
+    cout << setw(25) << left << thoiLuong;
+    cout << setw(25) << left << daoDien;
+    cout << setw(25) << left << dienVien << endl;
+}
+
+void Film::Display2(){
+    cout << "Ma Phim: " << this->maPhim << endl;
+    cout << "Ten Phim: " << this->tenPhim << endl;
+    cout << "The Loai: " << this->theLoai << endl;
+    cout << "Thoi Luong: " <<this->thoiLuong << endl;
+    cout << "Dao Dien: " << this->daoDien << endl;
+    cout << "Dien Vien: " << this->dienVien << endl;
+    cout << "Nam Cong Chieu: " << this->namCongChieu << endl;
+    cout << "Quoc Gia: " << this->quocGia << endl;
 }
 
 void Film::ShowMenu()
 {
-    cout<<"\n1.Xem Hom nay co phim gi:";
-    cout<<"\n2.Tim kiem Phim theo the loai:";
-    cout<<"\n3.Tim kiem Phim";
-    cout<<"\n4.Thanh Toan";
-    cout<<"\n5.Thoat";
-    cout<<"\nchon:";
+    cout<<"\n1.Xem Hom nay co phim gi:"<<endl;
+    cout<<"\n2.Tim kiem Phim theo the loai:"<<endl;
+    cout<<"\n3.Search Phim"<<endl;
+    cout<<"\n4.Doi mat khau"<<endl;
 }
 void Film::Phim()
 {
    //đọc file và in ra 
-}
-void Film::InsertFilm()
-{
-    //in ra cac the loai phim
-    /*in ra 3 sự lựa chọn:1.xem thông tin phim
-                         2.chon mua ve
-                         3.quay lại menu chinh*/
 }
 void Film::TimkiemPhim()
 { //in các thể loại của phim ra:
@@ -121,7 +116,7 @@ void Film::TimkiemPhim()
                          2.chon mua ve
                          3.quay lại menu chinh*/ 
 }
-void Film::TimkiemPhim()
+void Film::searchFilm()
 {
     //khách hàng nhập tên phim muốn tìm kiếm
     //Nếu có trong file Film.cvs thì in ra
