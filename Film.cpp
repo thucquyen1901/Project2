@@ -78,12 +78,12 @@ string Film::getQuocGia()
 }
 void Film::Display()
 {
-    cout << "|    " << setw(11) << left << this->maPhim << "|";
-    cout << setw(30) << left << this->tenPhim << "|";
-    cout << setw(25) << left << this->theLoai << "|";
-    cout << setw(25) << left << this->thoiLuong << "|";
-    cout << setw(25) << left << this->daoDien << "|";
-    cout << setw(25) << left << this->dienVien<< endl;
+    cout << " " << setw(9) << left << this->maPhim << "| ";
+    cout << setw(30-1) << left << this->tenPhim << "| ";
+    cout << setw(25-1) << left << this->theLoai << "| ";
+    cout << setw(15-1) << left << this->thoiLuong << "| ";
+    cout << setw(25-1) << left << this->daoDien << "| ";
+    cout << setw(40-1) << left << this->dienVien << endl;
 }
 
 void Film::Display2(){

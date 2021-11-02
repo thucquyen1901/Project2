@@ -16,18 +16,11 @@ QuanLyPhim QLP;
 vector<Customer> CTM;
 QLPhongChieu QLPC;
 
-void them(QuanLyPhim& m){
-    Film f1("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", "120", "Quang Hoang", "Quang Hoang", "2017", "Viet Nam");
-    m.Add_Film(f1);
-}
-
-
 int main(){
-    // // them(QLP);
     DocFile(QLNV, QLP, QLPC, CTM, SoKhach);
-    // QLP.Show();
-    SetConsoleOutputCP(65001);
-    QLPC.Show();
+    QLP.XemTheloaiPhim();
+    QLP.XemDSPhimCuaTheLoai("Sieu Anh Hung");
+    QLP.XemDSPhimCuaTheLoai("Kinh Di");
     // system("cls");
     return 0;
 }

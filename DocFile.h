@@ -17,6 +17,7 @@ void DocFile(QuanLyNhanVien& QLNV,QuanLyPhim& QLP, QLPhongChieu& QLPC ,vector<Cu
     string Gmail;
     string MatKhau;
     string HoTen;
+    // EOF = end of file
     while(ip.peek()!=EOF){
         i++;
         getline(ip,Gmail,',');
@@ -54,6 +55,7 @@ void DocFile(QuanLyNhanVien& QLNV,QuanLyPhim& QLP, QLPhongChieu& QLPC ,vector<Cu
         getline(ip3,dientich,',');
         getline(ip3,tinhtrang,',');
         getline(ip3,maBV,'\n');
+        // chuyen string thanh int
         int nsocho = stoi(socho);
         float ndientich = stoi(dientich);
         PhongChieu temp(maPC,nsocho,maychieu,amthanh,ndientich,tinhtrang,maBV);

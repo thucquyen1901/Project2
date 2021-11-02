@@ -1,5 +1,6 @@
 #include "Film.h"
-#include<string>
+#include <string>
+#include "DoHoa.h"
 #pragma once
 class QuanLyPhim
 {
@@ -15,4 +16,6 @@ public:
     int IndexOf(string);
     void Update_Film(string);
     void Delete_Film(string);
+    void XemTheloaiPhim();
+    void XemDSPhimCuaTheLoai(string);
 };
