@@ -36,5 +36,8 @@ public:
     void Display();
     void Display2();
     void ShowMenu();
+    void Phim();
+    void searchFilm();
+    void TimkiemPhim();
     ~Film();
 };
