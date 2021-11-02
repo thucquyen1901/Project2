@@ -2,18 +2,15 @@
 #include "DocFile.h"
 #include <math.h>
 #include "QuanLyPhim.h"
-#include"QuanLyNhanVien.h"
+#include "QuanLyNhanVien.h"
+#include "QLPhongChieu.h"
 #include "DoHoa.h"
 #include <windows.h>
 #include "Time.h"
 #include "LoginData.h"
 using namespace std;
-int SoKhach;
-// void them(QuanLyPhim& m){
-//     Film f1("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
-//     m.Add_Film(f1);
-// }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 void ShowMenuKhachHang()
 {
@@ -57,15 +54,28 @@ int main(){
     M1.Delete_NV("Nv2");
     system("pause");
 =======
+=======
+int SoKhach;
+>>>>>>> 474ca651dd6524a3416220a6b650143521fdcdb6
 QuanLyNhanVien QLNV;
 QuanLyPhim QLP;
 vector<Customer> CTM;
+QLPhongChieu QLPC;
+
+void them(QuanLyPhim& m){
+    Film f1("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", "120", "Quang Hoang", "Quang Hoang", "2017", "Viet Nam");
+    m.Add_Film(f1);
+}
+
 
 int main(){
-    DocFile(QLNV, QLP, CTM, SoKhach);
-    QLP.Show();
-    // SetConsoleOutputCP(65001);
+    // // them(QLP);
+    DocFile(QLNV, QLP, QLPC, CTM, SoKhach);
+    // QLP.Show();
+    SetConsoleOutputCP(65001);
+    QLPC.Show();
     // system("cls");
+<<<<<<< HEAD
     // Film f1("1", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
     // Film f2("2", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
     // Film f3("3", "Ve Binh Giai Ngan Ha", "Sieu Anh Hung", 120, "Quang Hoang", "Quang Hoang", 2017, "Viet Nam");
@@ -78,5 +88,7 @@ int main(){
     // p.Delete_Film("1");
     // p.Show();
 >>>>>>> 9ba9292cad36f1c07432dca0cd376eae5d96388b
+=======
+>>>>>>> 474ca651dd6524a3416220a6b650143521fdcdb6
     return 0;
 }
