@@ -11,6 +11,8 @@ public:
     QuanLyPhim();
     ~QuanLyPhim();
     void Show();
+    void TieuDeCot();
+    string getFimlName(int);
     void Add_Film(const Film&);
     int checkMSFilm(string);
     int IndexOf(string);
@@ -18,4 +20,6 @@ public:
     void Delete_Film(string);
     void XemTheloaiPhim();
     void XemDSPhimCuaTheLoai(string);
+    void TimKiemPhim();
+    void MenuChoKhach();
 };

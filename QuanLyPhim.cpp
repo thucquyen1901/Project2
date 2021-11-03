@@ -36,14 +36,18 @@ void QuanLyPhim::Add_Film(const Film &f)
     this->n++;
 }
 
-void QuanLyPhim::Show()
-{
+void QuanLyPhim::TieuDeCot(){
     cout << setw(10) << left << " Ma Phim" << "|";
     cout << setw(30) << left << " Ten Phim:" << "|";
     cout << setw(25) << left << " The loai:" << "|";
-    cout << setw(25) << left << " Thoi Luong:" << "|";
+    cout << setw(15) << left << " Thoi Luong:" << "|";
     cout << setw(25) << left << " Dao Dien:" << "|";
     cout << setw(25) << left << " Dien Vien:" << endl;
+}
+
+void QuanLyPhim::Show()
+{
+    TieuDeCot();
     for (int i = 0; i < this->n; i++)
     {
         (p + i)->Display();
@@ -64,9 +68,14 @@ int QuanLyPhim::checkMSFilm(string s)
     return index;
 }
 
+string QuanLyPhim::getFimlName(int i){
+    return (this->p + i)->getTenPhim();
+}
+
+
 void QuanLyPhim::Update_Film(string m)
 {
-    int i = checkMSFilm("m");
+    int i = checkMSFilm(m);
     if(i >= 0){
         if (m == (this->p + i)->getMaPhim())
         {
@@ -168,20 +177,62 @@ void QuanLyPhim::XemDSPhimCuaTheLoai(string m){
     GoTo(5,2);
     cout << " Nhung Phim The Loai " << m;
     GoTo(0,5);
-    cout << setw(10) << left << " Ma Phim" << "|";
-    cout << setw(30) << left << " Ten Phim:" << "|";
-    cout << setw(25) << left << " The loai:" << "|";
-    cout << setw(15) << left << " Thoi Luong:" << "|";
-    cout << setw(25) << left << " Dao Dien:" << "|";
-    cout << setw(40) << left << " Dien Vien:" << endl;
+    TieuDeCot();
     for(int i = 0; i < this->n; i++){
         if((this->p+i)->getTheLoai() == m){
            (this->p + i)->Display();
            count++;
         }
     }
-    draw(1,4,146,count+5+1);
     if(count == 0) cout << "Khong Co The Loai Phim Nay";
 }
 
+void QuanLyPhim::TimKiemPhim(){
+    system("cls");
+    string s;
+    GoTo(0,3);
+    cout << "   Nhap Ten Phim Ban Muon Tim: ";  cin >> s;
+    int k = 0;
+    cout << endl;
+    TieuDeCot();
+    for (int i = 0; i < this->n; i++)
+    {
+        if(strstr((this->p)->getTenPhim().c_str(),s.c_str())){ // chuoi s la con cua chuoi ten phim
+            (this->p+i)->Display();
+            k++;
+        }
+    }
+    if(k==0){
+        system("cls");
+        cout << "Khong Tim Thay" << endl;
+        getchar();
+        MenuChoKhach();
+    }
+}
+
+void QuanLyPhim::MenuChoKhach()
+{
+    cout<<"\n1.Xem Hom nay co phim gi:"<<endl;
+    cout<<"\n2.Tim kiem Phim theo the loai:"<<endl;
+    cout<<"\n3.Tim kiem theo ten Phim"<<endl;
+    cout << endl;
+    int chon;
+    cout << "Nhap Lua Chon: ";
+    cin >> chon;
+    switch (chon)
+    {
+    case 1:
+        /* code */
+        break;
+    case 2:
+        XemTheloaiPhim();
+        break;
+    case 3:
+        TimKiemPhim();
+        break;
+    default:
+        break;
+    }
+    
+}
 

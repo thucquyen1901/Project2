@@ -17,7 +17,6 @@ private:
 public:
     Film(string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown", string = "Unknown");
 
-
     void setMaPhim(string);
     void setTenPhim(string);
     void setTheLoai(string);
@@ -26,6 +25,7 @@ public:
     void setDienVien(string);
     void setNamCongChieu(string);
     void setQuocGia(string);
+
     string getMaPhim();
     string getTenPhim();
     string getTheLoai();
@@ -33,11 +33,9 @@ public:
     string getDaoDien();
     string getDienVien();
     string getQuocGia();
+
     void Display();
     void Display2();
-    void ShowMenu();
-    void Phim();
-    void searchFilm();
-    void TimkiemPhim();
+ 
     ~Film();
 };
