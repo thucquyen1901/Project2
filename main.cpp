@@ -49,9 +49,10 @@ QLPhongChieu QLPC;
 QuanLyLichChieu QLLC;
 int SoKhach;
 int main(){
-    DocFile(QLNV, QLP, QLPC, CTM, SoKhach);
-    QLP.Show();
+    // DocFile(QLNV, QLP, QLPC, CTM, SoKhach);
+    DocFile_LichChieu(QLLC);
     QLLC.setLichChieu();
     QLLC.Show();
+    UpdateFile_LichChieu(QLLC);
     return 0;
 }

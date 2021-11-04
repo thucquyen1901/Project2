@@ -33,6 +33,7 @@ public:
     string getDaoDien();
     string getDienVien();
     string getQuocGia();
+    string getNamCongChieu();
 
     void Display();
     void Display2();

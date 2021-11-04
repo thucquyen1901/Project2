@@ -16,6 +16,7 @@ public:
     void Add_Film(const Film&);
     int checkMSFilm(string);
     int IndexOf(string);
+    friend void UpdateFile_Phim(QuanLyPhim&);
     void Update_Film(string);
     void Delete_Film(string);
     void XemTheloaiPhim();
