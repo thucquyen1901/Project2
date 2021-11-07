@@ -1,6 +1,8 @@
 #include"DoHoa.h"
 #include"Film.h"
 #include "Time.h"
+//#include"Ve.h"
+//#include"Food.h"
 class Person
 {
 private:
@@ -59,6 +61,7 @@ void DatVe() // viet trong phan quan ly ve
     cout<<"Nhập số vé quý khách cần mua:"<<endl;
     int n;
     cin>>n;
+//cout<<"Loai ve quy khach mua: ";string s;cin>>s;
     cout<<"Nhập mã vé mà quý khách muốn mua:"<<endl;
     SetColor(0, 7);
 		while (n > 0)
@@ -72,6 +75,10 @@ void DatVe() // viet trong phan quan ly ve
             cout<<"Quý khách đặt vé xem Phim tên :";
             //
 		} 
+	// if(s==getTenLoaiVe()) int m=getGiaLoaiVe();
+	//int tienDoAn=food::tienFood();
+	//int tien=m*n+tienDoAn;
+	//cout<<"Tong tien "<<tien<<endl;
         int lc2;
     cout<<"Quý khách thanh toán bằng:"<<endl;
     cout<<"1.tiền mặt."<<endl;
